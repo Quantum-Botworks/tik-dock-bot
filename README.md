@@ -42,107 +42,119 @@
    ```bash
    git clone https://github.com/Quantum-Botworks/tik-dock-bot.git
    cd tik-dock-bot
+   ```
 
-Install dependencies
-bashnpm install
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-Configure environment
-bashcp .env.example .env
-# Edit .env with your Discord bot token
+3. **Configure environment**
+   ```bash
+   cp .env.example .env
+   # Edit .env with your Discord bot token
+   ```
 
-Start the bot
-bashnpm start
+4. **Start the bot**
+   ```bash
+   npm start
+   ```
 
+## ⚙️ Configuration
 
-⚙️ Configuration
-Required Environment Variables
-envDISCORD_TOKEN=your_discord_bot_token
-Discord Bot Permissions
+### Required Environment Variables
+```env
+DISCORD_TOKEN=your_discord_bot_token
+```
+
+### Discord Bot Permissions
 The bot requires the following permissions:
+- Send Messages
+- Embed Links
+- Read Message History
+- Use Slash Commands
+- Manage Messages (for link replacement)
 
-Send Messages
-Embed Links
-Read Message History
-Use Slash Commands
-Manage Messages (for link replacement)
+### Bot Intents
+- Guilds
+- Guild Messages
+- Message Content
+- Guild Members
+- Direct Messages
 
-Bot Intents
+## 📖 Usage
 
-Guilds
-Guild Messages
-Message Content
-Guild Members
-Direct Messages
-
-📖 Usage
-Automatic TikTok Enhancement
+### Automatic TikTok Enhancement
 Simply post any TikTok link in a channel where Tik Dock is active. The bot will automatically:
+1. Replace your message with an enhanced embed
+2. Add voting buttons (1-5 stars)
+3. Include quick action buttons (download, playlist, etc.)
+4. Award you points for sharing content
 
-Replace your message with an enhanced embed
-Add voting buttons (1-5 stars)
-Include quick action buttons (download, playlist, etc.)
-Award you points for sharing content
+### Slash Commands
 
-Slash Commands
-/leaderboard [type] [range]
+#### `/leaderboard [type] [range]`
 View community engagement leaderboards
+- **Types**: `five_stars`, `avg_rating`, `videos_shared`, `points`
+- **Range**: Number of top users to display (5-25)
 
-Types: five_stars, avg_rating, videos_shared, points
-Range: Number of top users to display (5-25)
-
-/stats [user]
+#### `/stats [user]`
 Display TikTok engagement statistics for yourself or another user
-/playlist [action]
-Manage server TikTok playlists (Coming Soon)
-Voting System
+
+#### `/playlist [action]`
+Manage server TikTok playlists *(Coming Soon)*
+
+### Voting System
 Rate any TikTok video from 1-5 stars:
+- ⭐ 1-2 Stars: Not great content
+- ⭐ 3 Stars: Average/okay content  
+- ⭐ 4-5 Stars: Great content worth sharing
 
-⭐ 1-2 Stars: Not great content
-⭐ 3 Stars: Average/okay content
-⭐ 4-5 Stars: Great content worth sharing
+## 🏗️ Technical Architecture
 
-🏗️ Technical Architecture
-Database Schema
+### Database Schema
+- **Servers**: Trial/subscription management
+- **TikTok Interactions**: Video metadata and voting data
+- **User Stats**: Points, ratings, and engagement metrics
+- **Playlists**: Content organization *(Coming Soon)*
 
-Servers: Trial/subscription management
-TikTok Interactions: Video metadata and voting data
-User Stats: Points, ratings, and engagement metrics
-Playlists: Content organization (Coming Soon)
+### Built With
+- **[Discord.js](https://discord.js.org/)** - Discord API library
+- **[SQLite3](https://sqlite.org/)** - Lightweight database
+- **[Node-cron](https://github.com/node-cron/node-cron)** - Scheduled tasks
+- **[Axios](https://axios-http.com/)** - HTTP client for API calls
 
-Built With
+## 💰 Subscription Model
 
-Discord.js - Discord API library
-SQLite3 - Lightweight database
-Node-cron - Scheduled tasks
-Axios - HTTP client for API calls
+### Free Trial
+- **Duration**: 10 days
+- **Full feature access** during trial period
+- **Automatic trial start** when bot joins server
 
-💰 Subscription Model
-Free Trial
+### Pricing Tiers
+- **Starter**: $7.99/month (0-1,000 members)
+- **Growth**: $29.99/month (1,001-10,000 members)  
+- **Enterprise**: $59.99/month (10,000+ members)
 
-Duration: 10 days
-Full feature access during trial period
-Automatic trial start when bot joins server
+## 🤝 Contributing
 
-Pricing Tiers
+We welcome contributions! 
 
-Starter: $7.99/month (0-1,000 members)
-Growth: $29.99/month (1,001-10,000 members)
-Enterprise: $59.99/month (10,000+ members)
+### Development Setup
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-🤝 Contributing
-We welcome contributions! Please see our Contributing Guidelines for details.
-Development Setup
+## 📝 License
 
-Fork the repository
-Create a feature branch (git checkout -b feature/amazing-feature)
-Commit your changes (git commit -m 'Add amazing feature')
-Push to the branch (git push origin feature/amazing-feature)
-Open a Pull Request
+This project is licensed under the GPL v3 License - see the [LICENSE](LICENSE) file for details.
 
-📝 License
-This project is licensed under the GPL v3 License - see the LICENSE file for details.
-🆘 Support
+## 🆘 Support
 
+- **Email**: quantumbotworks@zohomail.com
 
-Built with ❤️ by Quantum Botworks
+---
 
+**Built with ❤️ by [Quantum Botworks](https://github.com/Quantum-Botworks)**
